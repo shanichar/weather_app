@@ -13,7 +13,13 @@ def weather_dashboard():
 @app.route('/results', methods=['POST'])
 def render_results():
     area = request.form['Area']
-
+    try:
+        f = open("places.txt", "a")
+        f.write(area)
+        f.close
+    except Exceeption as e:
+        area = (area+"error")
+    
     api_key = get_api_key()
     data = get_weather_results(area, api_key)
     temp = "{0:.2f}".format(data["main"]["temp"])
