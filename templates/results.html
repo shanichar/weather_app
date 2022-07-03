@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-      header {
-        text-align:center;
-        background-color: rgb(5, 5, 5);
-        }.content {
-          margin: auto;
-        }
-        </style>
+  <style>
+    body {
+      background-image: url("https://jooinn.com/images/cumulus-cloud-3.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      text-align: center;
+      font-size: large;
+    }
+
+
+  </style>
     <meta charset="UTF-8">
     <title>weather in {{location}}</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/results.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap" rel="stylesheet">
-    <style>
-        footer {
-          text-align: center;
-          padding: 3px;
-          background-color: rgb(5, 5, 5);
-          color: white;
-        }
-        .content {
-          text-align: center;
-  max-width: auto;
-  margin: auto;
-        }
-        </style>
 </head>
-<body bgcolor="black">
-  
-  <header>
-    <div class="content">
-      <div id="weatherResults">
-        <h3>Weather in {{ location }}</h3>
-        <h2>{{tempc}}° C</h2>
-        <h3>Expected: {{ weather }}</h3>
-        <h3>Wind speed: {{ wind }} Km/hour<h3>
-        <h3>Feels like: {{feel_like}}° C </h3>
-      </div></div>
+
+
+<body>
+  <div class="container">
+    <h1 class="neon">Weather in {{ location }}</h1>
+    <h1>{{tempc}}° C</h1>
+    <h1>Expected: {{ weather }}</h1>
+    <h1>Wind speed: {{ wind }} Km/hour<h1>
+    <h1>Feels like: {{feel_like}}° C </h1>
+  </div>
   <footer>
     <h5>Created by Shaurya Mishra</h5>
     <a href="https://mail.google.com/mail/u/0/#search/shauryamishra444%40gmail.com">*CONTACT*</a></p>
