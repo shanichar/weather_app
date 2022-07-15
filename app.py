@@ -17,7 +17,7 @@ def render_results():
         f = open("places.txt", "a")
         f.write(area)
         f.close
-    except Exceeption as e:
+    except Exception as e:
         area = (area+"error")
     
     api_key = get_api_key()
@@ -29,10 +29,13 @@ def render_results():
     wind = data["wind"]["speed"]
     weather = data["weather"][0]["main"]
     location = data["name"]
-
+    description = data["weather"][0]["description"]
+    country = data["sys"]["country"]
+    icon = data["weather"][0]["icon"]
+    icon_link = ("http://openweathermap.org/img/wn/" + icon + ".png")
     return render_template('results.html',
-                           location=location, tempf=temp,tempc=celcius,
-                           wind=wind,feel_like=feel_like,feels_like=feels_like, weather=weather)
+                           location=location, tempf=temp,tempc=celcius, country=country, icon=icon_link,
+                           wind=wind,feel_like=feel_like,feels_like=feels_like, weather=weather, description=description)
 def get_api_key():
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -49,3 +52,4 @@ def get_weather_results(area, api_key):
 if __name__ == '__main__':
     app.debug = True
     app.run()
+#https://api.openweathermap.org/data/2.5/weather?q=bela&units=imperial&APPID=9ae2293a430331f38fc645ca26d6b271
