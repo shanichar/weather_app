@@ -3,29 +3,39 @@
 <head>
   <style>
     body {
-      background-image: url("https://jooinn.com/images/cumulus-cloud-3.jpg");
+      background-image: url("https://images.theconversation.com/files/232705/original/file-20180820-30593-1nxanpj.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
       text-align: center;
       font-size: large;
     }
-
-
   </style>
     <meta charset="UTF-8">
-    <title>weather in {{location}}</title>
+    <title>weather in {{location}}
+      <link rel = "icon" href = {{icon}} 
+        type = "image/x-icon">
+    </title>
 </head>
 
 
 <body>
+  <link rel="icon" type="image/png" href={{icon}} />
   <div class="container">
-    <h1 style="color: aquamarine; font-size: 200%;">Weather in {{ location }}</h1>
-    <h1 style="color: aquamarine; font-size: 200%">Weather expected {{ weather }}</h1>
-    <h1 style="color: aquamarine; font-size: 200%">Temperature will be {{tempc}}° C</h1>
-    <h1 style="color: aquamarine; font-size: 200%">You will feel like {{feel_like}}° C </h1>
-    <h1 style="color: aquamarine; font-size: 190%;">Weather description: {{descr}}</h1>
-    <h1 style="color: aquamarine; font-size: 200%">Wind speed: {{ wind }} Km/hour<h1>
+    <style>
+      .rectangle {
+        height: 500px;
+        width: 100px;
+        background-color: #555;
+        }
+        </style>
+    
+    <h1 style="color: rgb(0, 0, 0); font-size: 200%;">Showing results for {{ location }}, {{country}}</h1>
+    <h1 style="color: rgb(0, 0, 0); font-size: 200%">{{ weather }}</h1>
+    <h1 style="color: rgb(0, 0, 0); font-size: 300%">{{tempc}}° C</h1>
+    <h1 style="color: rgb(0, 0, 0); font-size: 150%">feels like {{feel_like}}° C </h1>
+    <h1 style="color: rgb(0, 0, 0); font-size: 150%;">Description: {{description}}</h1>
+    <h1 style="color: rgb(0, 0, 0); font-size: 150%">Wind speed: {{ wind }} Km/hour<h1>
   </div>
   <footer>
     <h3 style="color:transparent">         -Created by Shaurya Mishra</h3>
