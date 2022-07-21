@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="{{icon}}" type="image/x-icon">
   <style>
     body {
       background-image: url("https://images.theconversation.com/files/232705/original/file-20180820-30593-1nxanpj.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop");
@@ -13,19 +14,12 @@
   </style>
     <meta charset="UTF-8">
     <title>weather in {{location}}</title>
-    <link rel="icon" href="{{icon}}" type="image/x-icon">
+    
 </head>
 
 
 <body>
-    <style>
-      .rectangle {
-        height: 500px;
-        width: 100px;
-        background-color: #555;
-        }
-        </style>
-    
+  <div>    
     <h1 style="color: rgb(0, 0, 0); font-size: 200%;">Showing results for {{ location }}, {{country}}</h1>
     <h1 style="color: rgb(0, 0, 0); font-size: 200%">{{ weather }}</h1>
     <h1 style="color: rgb(0, 0, 0); font-size: 300%">{{tempc}}° C</h1>

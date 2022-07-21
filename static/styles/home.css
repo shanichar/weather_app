@@ -8,17 +8,17 @@ h2 {
 }
 
 #weatherForm {
-    padding: 20px;
+    padding: 50px;
 }
 
 #weatherSubmit {
-    color: white;
-    background-color: #fa8072;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
     padding: 5px 20px;
     border-radius: 5px;
     margin-top: 20px;
 }
 
 #weatherSubmit:hover {
-    cursor: pointer;
+    cursor: progress;
 }

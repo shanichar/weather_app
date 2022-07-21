@@ -1,10 +1,5 @@
-#weatherResults {
-    background-color: #72c4fa;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 24px;
-    padding: 20px;
-    display: inline-block;
-    text-align: center;
-    margin: 20px;
-    border-radius: 10px;
+.rectangle {
+  height: 50px;
+  width: 100px;
+  background-color: #555;
 }
