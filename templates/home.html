@@ -31,27 +31,27 @@
         document.getElementById('counts').innerText = response.value;
     }
     </script>
-    <script async src="https://api.countapi.xyz/hit/xactweather.herokuapp.com/8876e07a-824d-4b06-a0ee-090d0488e46a?callback=cb"></script>
+    <script async src="{{counter}}"></script>
     <div class="content">
       <style>
         h1 {
           color: white;
         }
       </style>
-<h1 class="weatherText">Xact Weather</h1>
+<h1 class="weatherText" style="font-size: 150%;">Xact Weather</h1>
 <style>
  form {
   color: white;
  }
 </style>
 <form class="weatherText" id="weatherForm" action="{{ url_for('render_results') }}" method="post">
-    City <input class="weatherText" id="weatherInput" type="text" name="Area" aria-label="city name"><br>
-    <input class="weatherText" id="weatherSubmit" type="submit" value="Submit" onclick="clicked()">
+    City <input class="weatherText" id="weatherInput" type="text" name="Area" aria-label="city name" style="color: rgb(2, 164, 2); font-size: 100%; background-color: rgb(10, 10, 10);"><br>
+    <input class="weatherText" id="weatherSubmit" type="submit" value="Submit" onclick="cb()">
 </form>
 </div>
 <footer>
   <div>
-    <p>Website has been visited</p><p id="counts"></p><p> times.</p>
+    <p id="counts" style="font-size: 150%;"></p><p style="font-size: 100%;">Visits till now.</p>
   </div>
   </footer>
 </body>
