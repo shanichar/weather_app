@@ -7,19 +7,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def weather_dashboard():
-    return render_template('home.html')
+    counter = ("https://api.countapi.xyz/hit/xactweather.herokuapp.com/" + count_key() + "?callback=cb")
+    return render_template('home.html',counter=counter)
 
 
 @app.route('/results', methods=['POST'])
 def render_results():
-    area = request.form['Area']
-    try:
-        f = open("places.txt", "a")
-        f.write(area)
-        f.close
-    except Exception as e:
-        area = (area+"error")
-    
+    area = request.form['Area'] 
     api_key = get_api_key()
     data = get_weather_results(area, api_key)
     temp = "{0:.2f}".format(data["main"]["temp"])
@@ -41,6 +35,11 @@ def get_api_key():
     config.read('config.ini')
     return config['openweathermap']['api']
 
+def count_key():
+    config = configparser.ConfigParser()
+    config.read('config.ini') 
+    a = config['hit']['api']
+    return str(a)
 
 def get_weather_results(area, api_key):
     api_url= 'https://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&APPID={}'.format(area,api_key)
